@@ -5,3 +5,5 @@
     from = "/api/v1/*" 
     to = "/.netlify/functions/api"
     status = 200
+
+
