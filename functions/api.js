@@ -1,9 +1,14 @@
 const express = require("express");
 const serverless = require("serverless-http");
 const { createClient } = require("@supabase/supabase-js");
+const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+
+// Enable CORS for all routes
+app.use(cors()); 
+
 app.use(express.json());
 
 // Initialize Supabase Client
@@ -510,7 +515,7 @@ app.delete("/api/v1/sales/:docNo", async (req, res) => {
 
 // ─── TEST ENDPOINT ───
 app.get("/api/v1/", (req, res) => {
-  res.json({ message: "Running on Netlify functions!" });
+  res.json({ message: "Running on Netlify functions with allowed CORS!" });
 });
 
 module.exports.handler = serverless(app);
