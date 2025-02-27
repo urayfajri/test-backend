@@ -20,6 +20,9 @@ importers:
       express:
         specifier: ^4.21.2
         version: 4.21.2
+      object-assign:
+        specifier: ^4.1.1
+        version: 4.1.1
       serverless-http:
         specifier: ^3.2.0
         version: 3.2.0
