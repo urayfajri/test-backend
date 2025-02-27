@@ -68,7 +68,10 @@ const verifySession = async (req, res, next) => {
 
 // Protected Route
 app.get("/api/v1/profile", verifySession, async (req, res) => {
-  res.json({ message: "User is authenticated", user: req.user });
+  res.json({  
+    status: 200,
+    error: null, 
+    data: req.user });
 });
 
 // Logout Route (Deletes Session)
